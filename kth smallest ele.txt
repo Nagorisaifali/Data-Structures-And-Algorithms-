@@ -1,0 +1,43 @@
+Kth Smallest
+
+Given an array arr[] and an integer k where k is smaller than the size of the array,
+the task is to find the kth smallest element in the given array. It is given that all 
+array elements are distinct.
+
+Follow up: Don't solve it using the inbuilt sort function.
+
+Input: arr[] = [7, 10, 4, 3, 20, 15], k = 3
+Output:  7
+Explanation: 3rd smallest element in the given array is 7.
+
+
+Input: arr[] = [7, 10, 4, 20, 15], k = 4 
+Output:  15
+Explanation: 4th smallest element in the given array is 15.
+
+//using priority queue //
+
+class Solution {
+  public:
+    // arr : given array
+    // k : find kth smallest element and return using this function
+    int kthSmallest(vector<int> &arr, int k) {
+        // code here
+        int n = arr.size() ;  
+        int ans = 0 ; 
+        priority_queue<int, vector<int> , greater<int>>pq ; 
+        for(int i=0;i<n;i++){
+            pq.push(arr[i]) ; 
+        }int cnt = 0 ; 
+        while(cnt != k){
+            ans = pq.top() ; 
+            pq.pop() ; 
+            cnt++ ; 
+        }return ans ; 
+    }
+};
+
+
+
+
+
