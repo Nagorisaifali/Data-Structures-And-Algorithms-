@@ -1,0 +1,109 @@
+//circular queue implimentetion using array  
+
+
+
+#include <stdio.h>
+#define N 5
+
+int front = -1, rear = -1;
+int cqueue[N];
+
+
+//insert the value .... to insert at a front in circular queue  
+it is follow first in first out rule 
+
+void insertion() {
+    if ((front == 0 && rear == N - 1) || (front == rear + 1)) {
+        printf("Queue is full\n");
+        return;
+    } else if (front == -1 && rear == -1) {
+        front = rear = 0;
+        printf("Enter element in Cqueue: ");
+        scanf("%d", &cqueue[rear]);
+    } else if (rear == N - 1 ) {
+        rear = 0;
+        printf("Enter element in Cqueue: ");
+        scanf("%d", &cqueue[rear]);
+    } else {
+       rear++ ; 
+        printf("Enter element in Cqueue: ");
+        scanf("%d", &cqueue[rear]);
+    }
+}
+
+
+//delete function  to delete element in cqueue
+
+void deletion(){
+	if(front == -1 && rear == -1){
+		printf("queue is empty\n") ; 
+		return ;
+	}
+	else if(front == rear){
+		printf("deleted ele is %d \n" , cqueue[front]) ; 
+		front = rear = -1 ; 
+	}
+	else if(front == N-1){
+		printf("deleted ele is %d \n" , cqueue[front]) ; 
+		front = 0 ; 
+	}
+	printf("deleted ele is %d \n" , cqueue[front]) ; 
+	front++ ; 
+}
+
+
+//print elements
+
+void display(){
+	int i , j ; 
+	if(front == -1 && rear == -1)
+	{	
+		printf("queue is empty \n") ; 
+		return ; 
+	}
+	else if(front > rear)
+	{
+		for(i=front;i<N;i++)
+		{
+			printf(" elements are : %d\n" , cqueue[i]) ; 
+		}
+		for(j=0;j<=rear;j++)
+		{
+			printf(" elements are : %d\n" , cqueue[j]) ; 
+		}
+	}
+	for(i=front;i<=rear;i++){
+		printf(" elements are : %d\n" , cqueue[i]) ; 
+	}
+}
+
+
+
+int main() {
+    int ch;
+    while (1) {
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Display\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+
+        switch (ch) {
+            case 1:
+                insertion();
+                break;
+            case 2:
+                deletion();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice\n");
+        }
+    }
+}
