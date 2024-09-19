@@ -1,0 +1,146 @@
+#include<stdio.h> 
+#define N 5 
+
+int queue[N]; 
+int left = -1; 
+int right = -1; 
+
+void insert_right() {
+    int ele; 
+    if ((left == 0 && right == N - 1) || (left == right + 1)) {
+        printf("Queue overflow\n"); 
+        return; 
+    }
+    if (left == -1) {
+        left = 0;
+        right = 0; 
+    } else {
+        if (right == N - 1) {
+            right = 0; 
+        } else {
+            right = right + 1; 
+        }
+    }
+    printf("Enter element to add at rear: \n"); 
+    scanf("%d", &ele); 
+    queue[right] = ele; 
+}
+
+void insert_left() {
+    int ele; 
+    if ((left == 0 && right == N - 1) || (left == right + 1)) {
+        printf("Queue overflow\n"); 
+        return; 
+    }
+    if (left == -1) {
+        left = 0;
+        right = 0; 
+    } else {
+        if (left == 0) {
+            left = N - 1; 
+        } else {
+            left = left - 1; 
+        }
+    }
+    printf("Enter element to add at front: \n"); 
+    scanf("%d", &ele); 
+    queue[left] = ele; 
+}
+
+void delete_left() {
+    if (left == -1) {
+        printf("Queue is empty\n"); 
+        return; 
+    }
+    printf("Deleted element is %d\n", queue[left]); 
+    if (left == right) {
+        left = -1; 
+        right = -1; 
+    } else {
+        if (left == N - 1) {
+            left = 0; 
+        } else {
+            left = left + 1; 
+        }
+    }
+}
+
+void delete_right() {
+    if (left == -1) {
+        printf("Queue is empty\n"); 
+        return; 
+    }
+    printf("Deleted element is %d\n", queue[right]); 
+    if (left == right) {
+        left = -1; 
+        right = -1; 
+    } else {
+        if (right == 0) {
+            right = N - 1; 
+        } else {
+            right = right - 1; 
+        }
+    }
+}
+
+void display() {
+	int i ; 
+    if (left == -1) {
+        printf("Queue is empty\n");
+        return;
+    }
+    
+    printf("Queue elements: ");
+    if (left <= right) {
+        for ( i = left; i <= right; i++) {
+            printf("%d ", queue[i]);
+        }
+    } else {
+        for ( i = left; i < N; i++) {
+            printf("%d ", queue[i]);
+        }
+        for ( i = 0; i <= right; i++) {
+            printf("%d ", queue[i]);
+        }
+    }
+    printf("\n");
+}
+
+
+int main() {
+    int ch;  
+    while (1) {
+        printf("1. Insert Left\n");
+        printf("2. Insert Right\n"); 
+        printf("3. Delete Left\n"); 
+        printf("4. Delete Right\n");
+        printf("5. Display\n"); 
+        printf("6. Exit\n"); 
+        printf("Enter your choice: \n"); 
+        scanf("%d", &ch); 
+        
+        switch (ch) {
+            case 1: 
+                insert_left(); 
+                break;
+            case 2: 
+                insert_right(); 
+                break; 
+            case 3: 
+                delete_left(); 
+                break; 
+            case 4: 
+                delete_right(); 
+                break; 
+            case 5:
+                display(); 
+                break; 
+            case 6: 
+                printf("Exiting...\n");
+                return 0;  
+            default: 
+                printf("Invalid choice. Please try again.\n"); 
+        }
+    }
+    return 0;
+}
