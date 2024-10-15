@@ -1,0 +1,129 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int data;
+    struct Node *next;
+} Node;
+
+Node *head = NULL;
+
+void insert_first() {
+    Node *temp = (Node *)malloc(sizeof(Node));
+    if (!temp) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+    printf("Enter the data: ");
+    scanf("%d", &temp->data);
+    temp->next = head;
+    head = temp;
+}
+
+
+
+void insert_last() {
+    Node *temp = (Node *)malloc(sizeof(Node));
+    printf("Enter node data: ");
+    scanf("%d", &temp->data);
+    temp->next = NULL;
+
+    if (head == NULL) {
+        head = temp;
+    }Node *ptr = head;
+    while (ptr->next) {
+        ptr = ptr->next;
+    }
+    ptr->next = temp;
+}
+
+
+
+void delete_first(){
+	if(head == NULL){
+		printf("list is empty\n") ; 
+		return ; 
+	}
+	Node * temp = head ; 
+	head = head->next ; 
+	printf("deleted ele is %d\n" , temp->data) ; 
+	free(temp) ; 
+}
+
+
+void delete_last() {
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    if (head->next == NULL) {
+        printf("Deleted element is %d.\n", head->data);
+        free(head);
+        head = NULL;
+        return;
+    }
+
+    Node *ptr = head;
+    Node *prev = NULL; 
+    
+    while (ptr->next != NULL) {
+        prev = ptr;
+        ptr = ptr->next;
+    }
+
+    printf("Deleted element is %d\n", ptr->data);
+    free(ptr);
+    prev->next = NULL;
+}
+
+
+
+void display() {
+    if (head == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+    Node *temp = head;
+    while (temp) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    int ch;
+    while (1) {
+        printf("1. Insert_first\n");
+        printf("2. Insert_last\n");
+        printf("3. Delete_first\n");
+        printf("4. Delete_last\n");
+        printf("5. Display\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+
+        switch (ch) {
+            case 1:
+                insert_first();
+                break;
+            case 2:
+                insert_last();
+                break;
+            case 3:
+                delete_first();
+                break;
+            case 4:
+                delete_last();
+                break;
+            case 5:
+                display();
+                break;
+            case 6:
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice\n");
+        }
+    }
+}
