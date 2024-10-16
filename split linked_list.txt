@@ -1,0 +1,76 @@
+Split Linked List Alternating
+
+Given a singly linked list's head. Your task is to complete the 
+function alternatingSplitList() that splits the given linked list 
+into two smaller lists. The sublists should be made from alternating 
+elements from the original list.
+
+
+
+The sublist should be in the order with respect to the original list.
+Your have to return an array containing the both sub-linked lists.
+
+
+Input: LinkedList = 0->1->0->1->0->1
+Output: 0->0->0 , 1->1->1
+Explanation: After forming two sublists of the given list as required, we have two lists as: 0->0->0 and 1->1->1
+
+
+
+Input: LinkedList = 2->5->8->9->6
+Output: 2->8->6 , 5->9
+Explanation: After forming two sublists of the given list as required, we have two lists as: 2->8->6 and 5->9.
+
+
+
+
+Input: LinkedList: 7 
+Output: 7 , <empty linked list>
+
+
+Constraints:
+1 <= number of nodes <= 100
+1 <= node -> data <= 104
+
+
+vector<Node*> alternatingSplitList(struct Node* head) {
+        // Your code here  
+
+        // Dummy nodes to start the two lists
+        Node * ptr1 = new Node(0) ; 
+        Node * ptr2 = new Node(0) ; 
+
+ 
+
+          // Pointers to the current nodes of the two lists
+        Node * list1 = ptr1 ; 
+        Node * list2 = ptr2 ; 
+
+
+          // Boolean flag to alternate between the two lists
+        bool alternate = true ;
+        while(head){
+            if(alternate){
+                list1->next = head ; 
+                list1 = list1->next ; 
+            }else{
+                list2->next = head ; 
+                list2 = list2->next ; 
+            }
+
+             // Move to the next node 
+
+            head = head->next ; 
+            
+            alternate = !alternate ; 
+        }
+
+           // Terminate the two lists
+        list1->next = NULL ; 
+        list2->next = NULL ; 
+        
+
+             // Return the heads of the two lists (excluding dummy nodes)
+        return {ptr1->next , ptr2->next} ; 
+}
+
