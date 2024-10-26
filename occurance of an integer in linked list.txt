@@ -1,0 +1,56 @@
+Occurence of an integer in a Linked List
+
+Given a singly linked list and a key, count the number of occurrences of the given key in the linked list.
+
+Examples:
+
+Input: Linked List: 1->2->1->2->1->3->1, key = 1
+
+Output: 4
+Explanation: 1 appears 4 times. 
+
+
+
+Input: Linked List: 1->2->1->2->1, key = 3
+
+Output: 0
+Explanation: 3 appears 0 times
+
+
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(1)
+
+
+Approach:
+To count the number of occurrences of a given key in a singly linked 
+list, we can iterate through the list, check each node's data, and 
+increment a counter if the data matches the key. Here’s how you can 
+implement the count method:
+
+code Implementation:
+class Solution {
+    public static int count(Node head, int key) {
+        // code here
+        
+        int count=0;
+        Node temp=head;
+        
+        while(temp!=null){
+            if(temp->adta==key){
+                count++;
+            }
+            temp = temp->next;
+        }
+        return count;
+    }
+}
+
+Explanation
+Initialize a counter count to keep track of occurrences of key.
+Traverse the linked list starting from head.
+For each node, check if temp->data matches the key. If so, increment count.
+Move to the next node until the end of the list is reached.
+Return count, which will contain the total occurrences of key.
+This solution has a time complexity of O(n), where n is 
+the number of nodes in the linked list, as it needs to visit each 
+node once.
