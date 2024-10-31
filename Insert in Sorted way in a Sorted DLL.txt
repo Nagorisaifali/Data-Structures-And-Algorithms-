@@ -1,0 +1,63 @@
+Insert in Sorted way in a Sorted DLL
+
+Given a sorted doubly linked list and an element x, you need to 
+insert the element x into the correct position in the sorted Doubly 
+linked list(DLL).
+
+Note: The DLL is sorted in ascending order
+
+
+Example:
+
+Input: LinkedList: 3->5->8->10->12 , x = 9
+
+Output: 3->5->8->9->10->12
+
+Explanation: Here node 9 is inserted in the Doubly Linked-List.
+
+
+
+Input: LinkedList: 1->4->10->11 , x = 15
+
+Output: 1->4->10->11->15
+Explanation: Here node 15 is inserted in the Doubly Linked-List.
+
+
+
+Constraints:
+1 <= number of nodes <= 103
+1 <= node -> data , x <= 104
+
+
+Approach:
+
+To insert a value into a sorted doubly linked list while maintaining sorted order, start by creating a new node with the given value. 
+
+
+If the list is empty, new node becomes the head of the doubly linked list.
+else If the new node’s value is smaller than or equal to the head’s value, insert it at the beginning. 
+else, traverse the list to find the correct position where the new node’s value is greater than the 
+current node and smaller than the next node. Adjust pointers to insert the node between the current and next node or after the current node (if curr’s next is NULL) .
+
+class Solution {
+  public:
+    Node* sortedInsert(Node* head, int x) {
+        // Code here
+        Node * ptr = new Node() ; 
+        ptr->data = x ; 
+        if(head == NULL || head->data >= x){
+            ptr->next = head ; 
+            return ptr ;
+        }
+        Node * temp = head ; 
+        while(temp->next != NULL && temp->next->data < x){
+            temp = temp->next ; 
+        }ptr->next = temp->next ; 
+        temp->next = ptr ; 
+        return head ; 
+    }
+};
+
+
+
+
