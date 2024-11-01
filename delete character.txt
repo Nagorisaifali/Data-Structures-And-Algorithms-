@@ -1,0 +1,94 @@
+Delete Characters to Make Fancy String
+
+
+A fancy string is a string where no three consecutive characters are equal.
+
+Given a string s, delete the minimum possible number of characters from s to make it fancy.
+
+Return the final string after the deletion. It can be shown that the answer will always be unique.
+
+ 
+
+Example 1:
+
+Input: s = "leeetcode"
+Output: "leetcode"
+Explanation:
+Remove an 'e' from the first group of 'e's to create "leetcode".
+No three consecutive characters are equal, so return "leetcode".
+Example 2:
+
+Input: s = "aaabaaaa"
+Output: "aabaa"
+Explanation:
+Remove an 'a' from the first group of 'a's to create "aabaaaa".
+Remove two 'a's from the second group of 'a's to create "aabaa".
+No three consecutive characters are equal, so return "aabaa".
+Example 3:
+
+Input: s = "aab"
+Output: "aab"
+Explanation: No three consecutive characters are equal, so return "aab".
+ 
+
+Constraints:
+
+1 <= s.length <= 105
+s consists only of lowercase English letters.
+
+
+ntuition
+The problem requires us to remove extra consecutive characters such 
+that no three consecutive characters are the same. A simple approach 
+is to iterate through the string and only add a character if it 
+doesn’t form a triplet with the previous two characters in the 
+result string. This approach ensures we retain only valid characters
+ while processing each character once.
+
+Approach
+
+Edge Case Check: If the input string s has fewer than three characters, return s as-is since no triplet can form in such cases.
+
+Initialize the Result String: Start with an empty result string (ans). Add the first two characters from s directly to ans since they can't form a triplet on their own.
+
+Iterate Through the String:
+
+From the third character onward (i.e., s[2]), check if adding the current character s[i] to ans would create three consecutive identical characters.
+This can be done by comparing s[i] with the last two characters in ans. If s[i] is equal to both, skip adding it; otherwise, append it to ans.
+Return Result: Once the loop completes, ans will contain the modified string without any three consecutive identical characters.
+
+This approach is efficient, as it processes each character in the string only once, making it optimal for this problem.
+
+Complexity
+
+Time Complexity: O(N), where N is the length of the string s. Each character in the string is processed once.
+Space Complexity: O(N), as we're storing the result string, which in the worst case can be the same length as s.
+
+
+
+
+
+class Solution {
+public:
+    string makeFancyString(string s) {
+        if(s.size() < 3) return s;  // If string length is less than 3, return it as is
+
+        string ans;
+        ans += s[0];  // Add the first character
+        ans += s[1];  // Add the second character
+        
+        // Process each character starting from the third one
+        for(int i = 2; i < s.size(); i++) {
+            // Only add s[i] if it does not create three consecutive identical characters
+            if(!(s[i] == s[i-1] && s[i] == s[i-2])) {
+                ans += s[i];
+            }
+        }
+        
+        return ans;
+    }
+};
+
+
+
+
