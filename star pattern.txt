@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <string.h>
+
+void printletter(char letter) {
+    int row , col ; 
+    for ( row = 0; row < 7; row++) {
+        for ( col = 0; col < 7; col++) {
+            switch (letter) {
+                case 'S': 
+                    if ((row == 0) || (row == 3) || (row == 6) ||
+                        (col == 0 && row < 3) || (col == 6 && row > 3))
+                        printf("*");
+                    else
+                        printf(" ");
+                    break;
+                    
+                case 'A': 
+                    if ((row == 0) || (row == 3) ||
+                        (col == 0 && row > 0) || (col == 6 && row > 0))
+                        printf("*");
+                    else
+                        printf(" ");
+                    break;
+                    
+                case 'I': 
+                    if ((row == 0) || (row == 6) || (col == 3))
+                        printf("*");
+                    else
+                        printf(" ");
+                    break;
+                    
+                case 'F': 
+                    if ((row == 0) || (row == 3) || (col == 0))
+                        printf("*");
+                    else
+                        printf(" ");
+                    break;
+                    
+                case 'L': 
+                    if ((row == 6) || (col == 0))
+                        printf("*");
+                    else
+                        printf(" ");
+                    break;
+                    
+                default:
+                    printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    char *name = "S A I F  A L I";
+    int len = strlen(name);
+	int i ; 
+    for ( i = 0; i < len; i++) {
+        if (name[i] == ' ') {
+            printf("\n\n");
+        } else {
+            printletter(name[i]);
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
