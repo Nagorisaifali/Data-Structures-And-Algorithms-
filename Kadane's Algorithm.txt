@@ -27,11 +27,25 @@ Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1)
 
 
+Approach: This problem involves finding the contiguous subarray within a given array that has the maximum sum. We can efficiently solve this problem using the Kadane's algorithm, 
+which iterates through the array, keeping track of the current maximum sum and the overall maximum sum encountered so far.
+
+Key Idea: 
+
+The algorithm maintains a current_sum variable to store the sum of the current subarray.
+As we iterate through the array:
+If the current_sumbecomes negative, we discard it and start a new subarray from the current element.
+Otherwise, we update the current_sum by adding the current element.
+We continuously update the max_sum variable with the maximum of current_sum and the previously stored max_sum.
+Code:
+
+
+
 class Solution {
   public:
     // Function to find the sum of contiguous subarray with maximum sum.
     long long maxSubarraySum(vector<int> &arr) {
-        // code here...
+  
         long long ans = INT_MIN ; 
         long long sum = 0 ; 
         for(int i=0;i<arr.size();i++){
@@ -44,6 +58,20 @@ class Solution {
     }
 };
 
+
+class Solution:
+    def maxSubArraySum(self,arr):
+        current_sum = 0
+        max_sum = float('-inf')
+        for num in arr:
+            current_sum += num
+            max_sum = max(max_sum, current_sum)
+            if current_sum < 0:
+                current_sum = 0
+        return max_sum
+
+Time Complexity: O(n)
+Space Complexity: O(1)
 
 
 
