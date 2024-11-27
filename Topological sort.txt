@@ -1,0 +1,128 @@
+Topological sort
+
+Given an adjacency list for a Directed Acyclic Graph (DAG) where adj[u] contains a list of all vertices v such that there exists a directed edge u -> v. Return topological sort for the given graph.
+
+Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u -> v, vertex u comes before v in the ordering.
+Note: As there are multiple Topological orders possible, you may return any of them. If your returned Topological sort is correct then the output will be 1 else 0.
+
+
+Input: adj = [[], [0], [0], [0]] 
+
+Output: 1
+Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the given graph are:
+[3, 2, 1, 0]
+[1, 2, 3, 0]
+[2, 3, 1, 0]
+
+
+
+Input: adj = [[], [3], [3], [], [0,1], [0,2]]
+
+Output: 1
+Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the graph are:
+[4, 5, 0, 1, 2, 3]
+[5, 2, 4, 0, 1, 3]
+
+
+Constraints:
+2  ≤  V  ≤  103
+1  ≤  E  ≤  (V * (V - 1)) / 2
+
+
+BFS Approach || Kahn's Algo
+Idea
+
+The idea is that all nodes which will be at starting will have indegree 0. 
+
+Algorithm
+
+Store Indegree of all nodes in Array.
+Push nodes in Queue whose indegree == 0.
+Now, For each node in Queue.
+Pop the current node & Store into resultant Array
+Remove indegree count of all neighbours of current node.
+If neighbours indegree becomes 0 the push into queue.
+Finally, return resultant Array.
+
+
+class Solution {
+  public:
+    vector<int> topologicalSort(vector<vector<int>>& adj) {
+        int V = adj.size() ; 
+        vector<int>indegree(V,0) ;
+        for(int i=0;i<V;i++){
+            for(auto x : adj[i]){
+                indegree[x]++ ; 
+            }       
+        }queue<int>q ; 
+        for(int i=0;i<V;i++){
+            if(indegree[i] == 0){
+                q.push(i) ; 
+            }
+        }vector<int>topo ; 
+        while(!q.empty()){
+            int temp = q.front() ; 
+            q.pop() ; 
+            topo.push_back(temp) ; 
+            for(auto x : adj[temp]){
+                indegree[x]-- ; 
+                if(indegree[x] == 0){
+                    q.push(x) ; 
+                }
+            }
+        }return topo ; 
+    }
+};
+
+
+DFS Approach
+Idea
+
+Node that comes at last must be present at last. Hence, the idea is to store last visited at bottom. Thus, Stack comes into picture.
+
+Algorithm
+
+Make visited Array to tackle both disconnected & visited Nodes.
+Call DFS on each unvisited node
+Call DFS on unvisited Neighbours
+After making all calls to Neighbours Store current Node in a Stack.
+Finally, pop all the elements of stack into resultant Vector
+
+class Solution {
+  public:
+  
+	void dfs(int src , vector<int>&vis , stack<int>&st , vector<vector<int>>& adj){
+	    vis[src] = 1 ; 
+	    for(auto x : adj[src]){
+	        if(!vis[x]){
+	            dfs(x , vis , st , adj) ; 
+	        }
+	    }st.push(src) ; 
+	}
+    
+    
+    vector<int> topologicalSort(vector<vector<int>>& adj) {
+        Your code here
+        int V = adj.size() ; 
+        stack<int>st ; 
+        vector<int>vis(V,0) ; 
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                dfs(i , vis , st , adj) ; 
+            }
+        }
+        vector<int>ans ; 
+        while(!st.empty()){
+            ans.push_back(st.top()) ; 
+            st.pop() ; 
+        }
+        return ans ; 
+    }
+};
+
+
+Time Complexity: O(V + E)
+
+Space Complexity: O(V)
+
+
