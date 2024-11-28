@@ -91,7 +91,7 @@ Finally, pop all the elements of stack into resultant Vector
 class Solution {
   public:
   
-	void dfs(int src , vector<int>&vis , stack<int>&st , vector<vector<int>>& adj){
+	void dfs(int src ,vector<int>&vis , stack<int>&st , vector<vector<int>>& adj){
 	    vis[src] = 1 ; 
 	    for(auto x : adj[src]){
 	        if(!vis[x]){
@@ -101,7 +101,7 @@ class Solution {
 	}
     
     
-    vector<int> topologicalSort(vector<vector<int>>& adj) {
+    vector<int>topologicalSort(vector<vector<int>>& adj) {
         Your code here
         int V = adj.size() ; 
         stack<int>st ; 
@@ -121,8 +121,8 @@ class Solution {
 };
 
 
-Time Complexity: O(V + E)
+Time Complexity: O(V + E) 
 
-Space Complexity: O(V)
+Space Complexity: O(V) 
 
 
