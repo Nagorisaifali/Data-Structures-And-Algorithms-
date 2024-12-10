@@ -43,8 +43,7 @@ Code:
 
 class Solution {
   public:
-    // Function to find the sum of contiguous subarray with maximum sum.
-    long long maxSubarraySum(vector<int> &arr) {
+   long long maxSubarraySum(vector<int> &arr) {
   
         long long ans = INT_MIN ; 
         long long sum = 0 ; 
