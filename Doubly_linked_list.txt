@@ -64,14 +64,16 @@ void delete_last() {
     if(head->right == NULL){
     	printf("Deleted element is %d\n", head->data);
     	head = NULL ; 
-	}
+    }
     Node * ptr = head ; 
-    while (ptr->right->right != NULL) {
+    Node * prev = NULL ; 
+    while (ptr->right != NULL) {
+	prev = ptr ; 
         ptr = ptr->right;
     }
 
-    printf("Deleted element is %d\n", ptr->right->data);
-    ptr->right = NULL ; 
+    printf("Deleted element is %d\n", ptr->data);
+    prev->right = NULL ; 
     
 }
 
