@@ -26,7 +26,7 @@ Explanation: The output 1 denotes that the order is valid. Few valid Topological
 
 Constraints:
 2  ≤  V  ≤  103
-1  ≤  E  ≤  (V * (V - 1)) / 2
+1  ≤  E  ≤  (V * (V - 1))/2  
 
 
 BFS Approach || Kahn's Algo
