@@ -42,7 +42,7 @@ void rotate(vector<vector<int> >& mat) {
         for(int j=0;j<m;j++){
             ans[j][n-1-i] = mat[i][j] ; 
         }
-    }mat = ans ; 
+    }mat =  ans ; 
 }
 
 
