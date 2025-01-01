@@ -19,8 +19,8 @@ Output: 1
 Explanation: In the given array all element appear two times except 1 which appears once.
 
 
-Expected Time Complexity: O(n)
-Expected Auxiliary Space: O(1)
+Expected Time Complexity: 0(n)
+Expected Auxiliary Space: 0(1)
 
 
 class Solution {
