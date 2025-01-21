@@ -3,9 +3,8 @@ Reorganize The Array
 
 Given an array of elements arr[] with indices ranging from 0 to 
 arr.size() - 1, your task is to write a program that rearranges the 
-elements of the array such that arr[i] = i. If an element i is not 
+elements of the array such that arr[i] = i . If an element i is not 
 present in the array, -1 should be placed at the corresponding index.
-
 
 
 Examples:
@@ -37,33 +36,4 @@ vector<int> rearrange(const vector<int>& arr) {
             }
         }return ans ; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
