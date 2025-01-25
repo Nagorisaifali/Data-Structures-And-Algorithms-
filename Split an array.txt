@@ -40,8 +40,8 @@ class Solution {
                 left++;
             }
         }
-        if(rightSum==leftSum) return true;
-        else return false;
+        if(rightSum==leftSum)  return true;
+        else  return false;
     }
 }
 
