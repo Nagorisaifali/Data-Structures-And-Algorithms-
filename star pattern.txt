@@ -3,7 +3,7 @@
 
 void printletter(char letter) {
     int row , col ; 
-    for ( row = 0; row < 7; row++) {
+    for ( row = 0; row < 7; row++){
         for ( col = 0; col < 7; col++) {
             switch (letter) {
                 case 'S': 
