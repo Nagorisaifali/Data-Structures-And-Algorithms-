@@ -7,7 +7,6 @@ Note: As there are multiple Topological orders possible, you may return any of t
 
 
 Input: adj = [[], [0], [0], [0]] 
-
 Output: 1
 Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the given graph are:
 [3, 2, 1, 0]
@@ -17,7 +16,6 @@ Explanation: The output 1 denotes that the order is valid. Few valid Topological
 
 
 Input: adj = [[], [3], [3], [], [0,1], [0,2]]
-
 Output: 1
 Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the graph are:
 [4, 5, 0, 1, 2, 3]
