@@ -29,7 +29,7 @@ class Solution {
         // code here
         int n = 0 ; 
         for(auto i : arr){
-            n ^= i ; 
+           n ^= i ;   
         }return n ; 
     }
 };
