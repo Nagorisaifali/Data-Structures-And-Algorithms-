@@ -19,7 +19,7 @@ void swap(int* a, int* b) {
 // Partition function
 int partition(int arr[], int low, int high) {
     int pivot = arr[high];  // Choosing the last element as the pivot
-    int i = low - 1;        // Index of smaller element
+    int i  = low - 1;        // Index of smaller element
 	int j ; 
     for ( j = low; j < high; j++) {
         if (arr[j] < pivot) {  // If current element is smaller than pivot
