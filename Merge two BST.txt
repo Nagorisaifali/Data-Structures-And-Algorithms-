@@ -6,8 +6,8 @@ Given two BSTs, return elements of merged BSTs in sorted form.
 Input:
 BST1:
        5
-     /   \
-    3     6
+     /  \
+    3    6
    / \
   2   4  
 BST2:
