@@ -13,7 +13,7 @@ If the subsequence returned by the function is not in the format as mentioned th
 
 Examples :
 
-Input: arr = [1, 2, 1, 1, 3]
+Input: arr =  [1, 2, 1, 1, 3]
 Output: 1
 Explanation: A subsequence 1 2 3 exist.
 
@@ -21,6 +21,7 @@ Explanation: A subsequence 1 2 3 exist.
 Input: arr = [1, 1, 3]
 Output: 0
 Explanation: No such Subsequence exist, so empty array is returned (the driver code automatically prints 0 in this case).
+
 
 
 Expected Time Complexity: O(n)
