@@ -3,7 +3,7 @@ Longest Consecutive Subsequence
 
 Given an array arr[] of non-negative integers. Find the length of the longest sub-sequence such that elements in the subsequence are consecutive integers, the consecutive numbers can be in any order.
 
-Examples:
+Examples :
 
 Input: arr[] = [2, 6, 1, 9, 4, 5, 3]
 Output: 6
@@ -88,5 +88,5 @@ int longestConsecutive(vector<int>& arr) {
 
 
 
-/ Time Complexity: O(n*longn)
+// Time Complexity: O(n*longn)
 // Space Complexity: O(1)
