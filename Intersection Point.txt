@@ -31,7 +31,8 @@ Try to solve the problem without using any extra space.
 
 Constraints:
 2 ≤ size of first linkedist + size of second linkedlist ≤ 2*105
--10000 ≤ data of nodes ≤ 10000
+-10000 ≤ data of nodes ≤  10000
+
 
 
 
