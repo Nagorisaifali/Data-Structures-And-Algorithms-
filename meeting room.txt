@@ -9,6 +9,7 @@ Note: A person can  attend a meeting if its starting time is greater than or equ
 
 Examples:
 
+
 Input: arr[][] = [[1, 4], [10, 15], [7, 10]]
 Output: true
 Explanation: Since all the meetings are held at different times, it is possible to attend all the meetings.
