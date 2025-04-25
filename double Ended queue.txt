@@ -1,6 +1,7 @@
 #include<stdio.h> 
 #define N 5 
 
+
 int queue[N]; 
 int left = -1; 
 int right = -1; 
