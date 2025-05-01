@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 void printletter(char letter) {
     int row , col ; 
     for ( row = 0; row < 7; row++){
