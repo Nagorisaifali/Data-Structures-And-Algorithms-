@@ -4,6 +4,7 @@ Given an array of positive integers arr[], return the second largest element fro
 
 Note: The second largest element should not be equal to the largest element.
 
+
 Examples:
 
 Input: arr[] = [12, 35, 1, 10, 34, 1]
