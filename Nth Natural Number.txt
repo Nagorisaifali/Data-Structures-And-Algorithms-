@@ -25,7 +25,6 @@ Expected Time Complexity: O(logn)
 Expected Auxiliary Space: O(1)
 
 
-
 class Solution {
   public:
     long long findNth(long long n) {
