@@ -1,0 +1,57 @@
+LCS of three strings
+
+
+Given three strings s1, s2, and s3 containing uppercase letters, lowercase letters, and digits, find the length of longest common sub-sequence in all three given strings.
+
+Examples:
+
+Input: s1 = "geeks", s2 = "geeksfor", s3 = "geeksforgeeks"
+Output: 5
+Explanation: "geeks"is the longest common subsequence with length 5.
+
+
+Input: s1 = "abcd1e2", s2 = "bc12ea", s3 = "bd1ea"
+Output: 3
+Explanation:  Longest common subsequence is "b1e" i.e. length = 3.
+
+
+
+Constraints:
+1  ≤  s1.size(), s2.size(), s3.size()  ≤  100
+
+
+class Solution {
+  public:
+    int a , b , c ; 
+    vector<vector<vector<int>>>dp ; 
+    
+    int solve(int i , int j , int k , string& s1 , string& s2 , string& s3){
+        if(i>=a || j>=b || k>=c) return 0 ; 
+          
+        if(dp[i][j][k] != -1){
+            return dp[i][j][k] ; 
+        }
+        if(s1[i] == s2[j] && s2[j] == s3[k]){
+            return dp[i][j][k] = 1 + solve(i+1 , j+1 , k+1 , s1 , s2 , s3) ; 
+        }
+        return dp[i][j][k] = max({
+            solve(i+1 , j , k , s1 , s2 , s3) ,
+            solve(i , j+1 , k , s1 , s2 , s3) , 
+            solve(i , j , k+1 , s1 , s2 , s3) 
+        }) ; 
+
+    }
+    
+    int lcsOf3(string& s1, string& s2, string& s3) {
+        // Code here
+        a = s1.size() ; 
+        b = s2.size() ; 
+        c = s3.size() ; 
+        dp = vector<vector<vector<int>>>(a , vector<vector<int>>(b,vector<int>(c,-1)));
+        return solve(0,0,0,s1,s2,s3) ; 
+    }
+};
+
+
+Time Complexity: O (n1*n2*n3)
+Auxiliary Space: O (n2*n3)
