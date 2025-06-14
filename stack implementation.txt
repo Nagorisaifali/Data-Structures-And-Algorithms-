@@ -13,6 +13,7 @@ struct Node* top = NULL;
 
 
 
+
 void push() {
     int ele;
     struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
