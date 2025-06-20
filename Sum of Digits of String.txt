@@ -35,6 +35,7 @@ Input: s = "zbax", k = 2
 Output: 8
 
 
+
 class Solution {
 public:
     int getLucky(string s, int k) {
