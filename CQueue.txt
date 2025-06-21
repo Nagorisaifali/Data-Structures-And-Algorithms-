@@ -1,7 +1,6 @@
 //circular queue implimentetion using array  
 
 
-
 #include <stdio.h>
 #define N 5
 
