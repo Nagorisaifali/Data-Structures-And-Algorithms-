@@ -12,7 +12,6 @@ A binary tree is perfect if all parent nodes have two children and all leaves ar
 The level of a node is the number of edges along the path between it and the root node.
 
  
-
 Example 1:
 
 
