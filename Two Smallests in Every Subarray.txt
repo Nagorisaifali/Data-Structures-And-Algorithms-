@@ -61,7 +61,6 @@ int pairWithMaxSum(vector<int>& arr) {
 }
 
 
-
 Time Complexity
 
 - The algorithm iterates through the array once, calculating the sum of consecutive elements, which takes O(n), where n is the size of the array.
