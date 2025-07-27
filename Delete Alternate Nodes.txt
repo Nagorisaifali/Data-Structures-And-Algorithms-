@@ -13,7 +13,6 @@ Explanation: Deleting alternate nodes ie 2, 4, 6 results in the linked list with
 
 
 
-
 Input: LinkedList: 99->59->42->20
  
 Output: 99->42
