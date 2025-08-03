@@ -18,7 +18,7 @@ increasing heights thus maximum number of consecutive steps with an increase in 
 Input: arr[] = [1, 2, 3, 4]
 Output: 3
 Explanation: 1 to 2 to 3 to 4 is the jump of length 3 to have a maximum number of buildings with increasing heights,
- so maximum steps with increasing altitude becomes 3.
+so maximum steps with increasing altitude becomes 3.
 
 
 
