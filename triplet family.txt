@@ -47,7 +47,7 @@ bool findTriplet(vector<int>& arr) {
                     j-- ;              // Decrease the right pointer to get a smaller sum
                 }
             }
-}return false ;             // No triplet found
+}return false ;        // No triplet found
 
 
 
