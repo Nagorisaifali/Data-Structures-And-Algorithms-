@@ -5,7 +5,6 @@ even times except for one. Find that number occurring an odd number
 of times.
 
 
-
 Examples:
 
 Input: arr[] = [1, 1, 2, 2, 2]
