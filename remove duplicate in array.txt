@@ -2,6 +2,7 @@ Remove duplicates in array
 
 Given an array arr consisting of positive integers numbers, remove all duplicates numbers.
 
+
 Example:
 
 Input: arr[] = [2, 2, 3, 3, 7, 5] 
