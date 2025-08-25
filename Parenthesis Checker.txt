@@ -8,7 +8,6 @@ For example, the function should return 'true' for exp = [()]{}{[()()]()} and 'f
 Note: The driver code prints "balanced" if function return true, otherwise it prints "not balanced".
 
 
-
 Examples :
 
 Input: {([])}
