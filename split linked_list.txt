@@ -6,7 +6,6 @@ into two smaller lists. The sublists should be made from alternating
 elements from the original list.
 
 
-
 The sublist should be in the order with respect to the original list.
 Your have to return an array containing the both sub-linked lists.
 
