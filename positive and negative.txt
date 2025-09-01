@@ -8,7 +8,6 @@ Note: Array should start with a positive number and 0 (zero) should
 be considered a positive element.
 
 
-
 Examples:
 
 Input: arr[] = [9, 4, -2, -1, 5, 0, -5, -3, 2]
