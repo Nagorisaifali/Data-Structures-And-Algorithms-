@@ -32,7 +32,6 @@ In this program, we will explore an algorithm to find the first non-repeating ch
 The solution utilizes a hashmap to efficiently count the occurrences of each character in the string, enabling us to identify the first character with a count of 1.
 
  
-
 "Hashmap-Based Frequency Counting" approach.
 Explanation of the Approach:
 Hashmap-Based Frequency Counting:
