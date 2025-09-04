@@ -36,4 +36,3 @@ vector<int> rearrange(const vector<int>& arr) {
             }
         }return ans ; 
 }
-
