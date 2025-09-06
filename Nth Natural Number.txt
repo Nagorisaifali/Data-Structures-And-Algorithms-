@@ -1,10 +1,8 @@
 Nth Natural Number 
 
 
-
 Given a positive integer n. You have to find nth natural number after
 removing all the numbers containing the digit 9.
-
 
 
 Examples :
