@@ -7,12 +7,13 @@ complete the function leftView(), which accepts
 root of the tree as argument. If no left view is
  possible, return an empty tree.
 
+
 Left view of following tree is 1 2 4 8.
 
           1
        /     \
-     2        3
-   /     \    /    \
+     2         3
+   /     \    / \
   4     5   6    7
    \
      8   
