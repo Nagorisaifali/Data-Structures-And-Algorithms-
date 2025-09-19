@@ -55,7 +55,6 @@ class Solution {
         
         
         
-        
         // using binary search 
         
         int low = 0 ,  high = arr.size()-1 ; 
