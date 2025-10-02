@@ -46,4 +46,5 @@ void rotate(vector<vector<int> >& mat) {
 }
 
 
-
+Time Complexity : O(M*N)   
+Space Complexity : O(1) 
