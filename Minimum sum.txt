@@ -75,5 +75,3 @@ string minSum(vector<int> &arr)
     return removeZeroes(sum);
 }
 
-
-
