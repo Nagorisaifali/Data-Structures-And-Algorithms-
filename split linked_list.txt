@@ -73,3 +73,4 @@ vector<Node*> alternatingSplitList(struct Node* head) {
         return {ptr1->next , ptr2->next} ; 
 }
 
+
